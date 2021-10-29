@@ -1,4 +1,3 @@
-# include src/Makefile.testcase 
 
 .PHONY: clean
 
@@ -46,8 +45,8 @@ all: inst.bin data.bin convert
 	@mv convert $(TESTCASE_BUILD_DIR)
 	@mv inst_rom.coe $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)_inst.coe
 	@mv data_ram.coe $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)_data.coe
-	@mv inst.bin ./coe
-	@mv data.bin ./coe
+	@mv $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)_inst.coe ./coe/$(USER_PROGRAM)_inst.coe
+	@mv $(TESTCASE_BUILD_DIR)$(USER_PROGRAM)_data.coe ./coe/$(USER_PROGRAM)_data.coe
 
 
 $(TESTCASE_BUILD_DIR)$(USER_PROGRAM).o: $(TESTCASE_SRC_DIR)$(USER_PROGRAM).S
